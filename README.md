@@ -22,9 +22,7 @@ xrBankDAO’s architecture follows a decentralized model to maintain security an
 - **Minting**: Allows users to mint stablecoins (XSD) against their deposited XRP collateral.
 - **Earnings**: Users can earn yield by providing liquidity or through interest-bearing features on XSD.
 
-# MakerDAO Smart Contract Components
-
-The MakerDAO protocol comprises multiple contracts, each with a distinct role in managing and executing the stablecoin system. Here’s an overview of the main components:
+### SmartContracts
 
 | **Contract** | **Functionality**                                                                           |
 | ------------ | ------------------------------------------------------------------------------------------- |
