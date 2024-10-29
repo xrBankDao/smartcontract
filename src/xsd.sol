@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-/// esd.sol -- esd Stablecoin ERC-20 Token
+/// xsd.sol -- xsd Stablecoin ERC-20 Token
 
 // Copyright (C) 2017, 2018, 2019 dbrock, rain, mrchico
 
@@ -23,7 +23,7 @@ pragma solidity ^0.8.13;
 // It doesn't use LibNote anymore.
 // New deployments of this contract will need to include custom events (TO DO).
 
-contract Esd {
+contract xsd {
     // --- Auth ---
     mapping(address => uint) public wards;
     function rely(address guy) external auth {
@@ -33,13 +33,13 @@ contract Esd {
         wards[guy] = 0;
     }
     modifier auth() {
-        require(wards[msg.sender] == 1, "Esd/not-authorized");
+        require(wards[msg.sender] == 1, "xsd/not-authorized");
         _;
     }
 
     // --- ERC20 Data ---
-    string public constant name = "Esd Stablecoin";
-    string public constant symbol = "ESD";
+    string public constant name = "xsd Stablecoin";
+    string public constant symbol = "xsd";
     string public constant version = "1";
     uint8 public constant decimals = 18;
     uint256 public totalSupply;
@@ -89,11 +89,11 @@ contract Esd {
         address dst,
         uint wad
     ) public returns (bool) {
-        require(balanceOf[src] >= wad, "Esd/insufficient-balance");
+        require(balanceOf[src] >= wad, "xsd/insufficient-balance");
         if (src != msg.sender && allowance[src][msg.sender] != type(uint).max) {
             require(
                 allowance[src][msg.sender] >= wad,
-                "Esd/insufficient-allowance"
+                "xsd/insufficient-allowance"
             );
             allowance[src][msg.sender] = sub(allowance[src][msg.sender], wad);
         }
@@ -108,11 +108,11 @@ contract Esd {
         emit Transfer(address(0), usr, wad);
     }
     function burn(address usr, uint wad) external {
-        require(balanceOf[usr] >= wad, "Esd/insufficient-balance");
+        require(balanceOf[usr] >= wad, "xsd/insufficient-balance");
         if (usr != msg.sender && allowance[usr][msg.sender] != type(uint).max) {
             require(
                 allowance[usr][msg.sender] >= wad,
-                "Esd/insufficient-allowance"
+                "xsd/insufficient-allowance"
             );
             allowance[usr][msg.sender] = sub(allowance[usr][msg.sender], wad);
         }
@@ -165,10 +165,10 @@ contract Esd {
             )
         );
 
-        require(holder != address(0), "Esd/invalid-address-0");
-        require(holder == ecrecover(digest, v, r, s), "Esd/invalid-permit");
-        require(expiry == 0 || block.timestamp <= expiry, "Esd/permit-expired");
-        require(nonce == nonces[holder]++, "Esd/invalid-nonce");
+        require(holder != address(0), "xsd/invalid-address-0");
+        require(holder == ecrecover(digest, v, r, s), "xsd/invalid-permit");
+        require(expiry == 0 || block.timestamp <= expiry, "xsd/permit-expired");
+        require(nonce == nonces[holder]++, "xsd/invalid-nonce");
         uint wad = allowed ? type(uint).max : 0;
         allowance[holder][spender] = wad;
         emit Approval(holder, spender, wad);
