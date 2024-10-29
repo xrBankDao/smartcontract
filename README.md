@@ -24,93 +24,32 @@ xrBankDAO’s architecture follows a decentralized model to maintain security an
 
 ![System Diagram](./Modules.png)
 
-## xrBankDao Smart Contract
+## XrBankDAO Smart Contract
 
-MarkerDao Forked Project.
+XrBankDAO is a **MakerDAO Forked Project** on the XRPL EVM-sidechain. Below are the contract addresses deployed on the XRPL EVM-sidechain testnet:
 
-contract Address in educhain testnet is in below.
+| Contract                 | Address                                      |
+| ------------------------ | -------------------------------------------- |
+| **Vat Contract**         | `0x61f75708517e74B2d5eA3D26159338C564c23a1C` |
+| **Gem Contract**         | `0x8049c9E3cE496b47E0fE8aa8EdAEf751cF87e07d` |
+| **GemJoin Contract**     | `0x175Ad21516707BE6c5fe47C89C6590C434e6232f` |
+| **XSD Contract**         | `0x9b1A76B9749014A469354352bC70A12A0518C97d` |
+| **XsdJoin Contract**     | `0x00d93c10118654bDA344b4A7A212e234a82631aA` |
+| **CDP Manager Contract** | `0x68D6d12De9D35871E802E46B64Df9EFe7f2e888c` |
+| **OneClick Contract**    | `0xCFCaC874D81e24988242F08F8D4287119Cc2c80f` |
+| **Jug Contract**         | `0x1D13A32b62BaC1E4e37D7C7F0F93B3eB6291BdBC` |
+| **Spot Contract**        | `0xf8704B3fB65925510f99dC8271c10f27BdE88228` |
 
-vat : 0x514066e1f24fDA9f2B379748f9C001C3475625cB  
-gem : 0x345E902846aC3805719483d80D664ABa0B6aF40C  
-gemJoin : 0xD40588c705B99d406B048629E4D8863a2434beF5  
-esd : 0xCef966528A867176BF3a575c9951f695e8eB77a3  
-esdJoin : 0x42FfAe0648A84c0AC72D012402f380ab511AcBb1  
-jug : 0x09Fd469b3036E45Dad077Df411134Fb85218678e  
-spot : 0x92B7e50CE799e8E26dE7324b3a92e93Dbbdf554F  
-abacus : 0x4529d97aEfAF713E5bB20635f3C6b4Ac48175fC2  
-clip :0xc1bb3FA0431a9ab7d490dA1e2fb5B693d1178FF8  
-dog : 0x4011fC8085497b72f0287CBB0BcDa853ea07263b  
-flap : 0x95Fb13b7ffd5F55F2D78c26700E16a262aC2EeF8  
-flop : 0xf9b7Bbfc5E2acA9a168a50E1807F7903c2f2dF0D  
-vow : 0xC913B2Aad7F11404E4E91E53f2388f760F5A3AfA  
-pot : 0x07964F526825fcdCd54DdEd9aeE063bbb6968517  
-flash : 0x03e8DaF83b6fEc6c7a1cCA35FD8Aa73A48480F64  
-cdpManager : 0x0E492702CA0A2048e87A21CE3Ac7E11Be757af2b  
-...
+Each contract plays a critical role in managing and executing the various functionalities within XrBankDAO's DeFi ecosystem on XRPL EVM.
 
-## Foundry
+## How to Interact with the Smart Contract Online
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+1. **Visit the Contract Explorer**  
+   Go to the following website, replacing `{SmartContractAddress}` with the actual address of your smart contract:  
+   [https://explorer.xrplevm.org/address/{SmartContractAddress}](https://explorer.xrplevm.org/address/{SmartContractAddress})
 
-Foundry consists of:
+2. **Access the Contract**
+   - Click on **"Contract"** to open the contract's details.
+   - Choose **"Read Contract"** or **"Write Contract"** depending on the action you want to perform.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
-
-## Documentation
-
-https://book.getfoundry.sh/
-
-## Usage
-
-### Build
-
-```shell
-$ forge build
-```
-
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+This will allow you to read data from or write transactions to the contract directly through the explorer.
