@@ -22,6 +22,24 @@ xrBankDAO’s architecture follows a decentralized model to maintain security an
 - **Minting**: Allows users to mint stablecoins (XSD) against their deposited XRP collateral.
 - **Earnings**: Users can earn yield by providing liquidity or through interest-bearing features on XSD.
 
+# MakerDAO Smart Contract Components
+
+The MakerDAO protocol comprises multiple contracts, each with a distinct role in managing and executing the stablecoin system. Here’s an overview of the main components:
+
+| **Contract** | **Functionality**                                                                           |
+| ------------ | ------------------------------------------------------------------------------------------- |
+| **abaci**    | Manages the price decrease function for auctions, determining the pace of price reductions. |
+| **clip**     | Handles Liquidation 2.0 mechanics, ensuring an efficient liquidation process.               |
+| **dog**      | Initiates auctions, triggering the liquidation mechanism when necessary.                    |
+| **join**     | ERC20 token adapters that enable the protocol to interface with external tokens.            |
+| **jug**      | Collects stability fees, a crucial part of maintaining the stablecoin’s peg.                |
+| **spot**     | Fetches oracle price data, providing accurate asset valuations for the protocol.            |
+| **xsd**      | The stablecoin itself, designed to maintain stability within the ecosystem.                 |
+| **vat**      | The core CDP (Collateralized Debt Position) vault, where collateral and debt are managed.   |
+| **vow**      | Acts as the vault balance sheet, tracking surplus and debt to ensure system stability.      |
+
+Each contract interlocks to create a robust, decentralized system for issuing and maintaining stablecoins, underscoring MakerDAO's position as a leading DeFi protocol.
+
 ![System Diagram](./Modules.png)
 
 ## XrBankDAO Smart Contract
