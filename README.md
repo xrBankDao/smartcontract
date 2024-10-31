@@ -72,4 +72,4 @@ Each contract plays a critical role in managing and executing the various functi
 
 This will allow you to read data from or write transactions to the contract directly through the explorer.
 
-## You can check the code and run frontend : [Frontend] (https://github.com/xrBankDao/frontend)
+## You can check the code and run frontend -> [Front-End](https://github.com/xrBankDao/frontend)
