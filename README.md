@@ -16,6 +16,8 @@ We are committed to filling this crucial gap by introducing a robust, crypto-bac
 
 ## System Design Diagrams and Narrative
 
+![Overview](./Overview.png)
+
 ### System Design Overview
 
 xrBankDAO’s architecture follows a decentralized model to maintain security and reliability. The core contracts handle collateral, stablecoin issuance, yield generation, and liquidation if necessary. The primary components include:
